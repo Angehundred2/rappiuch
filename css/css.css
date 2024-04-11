@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(to bottom, #FFA500, #FFFFFF); /* Cambia los colores según tus preferencias */
+}
+
+.btnWitdh {
+    width: 100%;
+}
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card {
+    width: 80%; 
+}
+.card-title {
+    text-align: center;
+}
