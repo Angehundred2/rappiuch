@@ -1,30 +1,36 @@
-const $usuario = $("#usuario");
-const $password = $("#password");
+const $usuario = $("#usuarioPrincipal");
+const $password = $("#passPrincipal");
 
-/* CREDENCIALES VERDADERAS */
 const credenciales = {
-    usuario: "UCH2024",
-    pass: "123456"
-};
+  usuario: "Angelo",
+  pass: "a"
 
-$("#login").on("click", function(){
-    const valueUsuario = $usuario.val();
-    const valuePassword = $password.val();
-    if (valueUsuario == credenciales.usuario) {
-        if (valuePassword == credenciales.pass) {
-            location.href = "dashboard.html";
-        } else {
-            Swal.fire({
-                title: "ERROR",
-                text: "Contraseña incorrecta",
-                icon: "error"
-            });
-        }
+};
+$("#login").on("click", function(){ 
+  const valueUsuario = $("#usuarioPrincipal").val();
+  const valuePassword = $("#passPrincipal").val();
+
+  if (valueUsuario === credenciales.usuario) {
+    if (valuePassword === credenciales.pass) {
+        localStorage.setItem("#usuarioPrincipal", valueUsuario);
+        localStorage.usuario = valueUsuario;
+        window.location.href = "dashboard.html";
+
     } else {
         Swal.fire({
             title: "ERROR",
-            text: "Usuario no encontrado",
+            text: "Contraseña incorrecta",
             icon: "error"
         });
     }
+    
+} else {
+    Swal.fire({
+        title: "ERROR",
+        text: "Usuario no encontrado",
+        icon: "error"
+    });
+}
+
 });
+
